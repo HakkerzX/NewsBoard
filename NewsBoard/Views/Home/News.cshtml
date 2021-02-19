@@ -1,0 +1,27 @@
+﻿@model NewsBoard.Models.News
+@{
+    ViewData["Title"] = Model.NewsName;
+}
+
+<div>
+    <h1>@Model.NewsName</h1>
+    <table>
+        <tr>
+            <td><p>@Html.DisplayFor(model => model.NewsText)</p></td>
+        </tr>
+        <tr>
+            <td><img src="~/img/@Model.ImgName" style="width:35%" alt="" /></td>
+        </tr>
+        <tr>
+            <td><p>@Html.DisplayFor(model => model.NewsCategory.CategoryName)</p></td>
+            <td><p>@Html.DisplayFor(model => model.NewsDate)</p></td>           
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Удалить","Delete", new {id = Model.Id})</td>
+            <td>@Html.ActionLink("Редактировать","Edit",new { id = Model.Id })</td>
+        </tr>
+    </table>
+</div>
+
+
+

@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Создание статьи";
+}
+
+<div>
+    <h2>Создание</h2>
+    <form method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td><p>Название</p></td>
+                <td><input type="text" name="NewsName" required /></td>
+            </tr>
+            <tr>
+                <td>Текст Новости</td>
+                <td><textarea name="NewsText" required></textarea></td>
+            </tr>
+            <tr>
+                <td>Категория</td>
+                <td>
+                    <select id="Select1" name="NewsCategoryId" required>
+                        @foreach (var categories in ViewBag.Category)
+                        {
+                            <option value="@categories.Id">@categories.CategoryName</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Выберите изображение</td>
+                <td><input type="file" name="uploadedFile" accept="image/*" required /></td>
+            </tr>
+
+        </table>
+        <input id="Submit1" type="submit" value="Отправить" />
+
+    </form>
+</div>

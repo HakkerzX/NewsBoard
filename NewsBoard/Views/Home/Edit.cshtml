@@ -1,0 +1,28 @@
+﻿@model NewsBoard.Models.News
+@{
+    ViewData["Title"] = "Редактирование статьи";
+}
+
+@using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <p>
+        Название новости <br />
+        @Html.EditorFor(model => model.NewsName)
+    </p>
+
+    <p>
+        Текст новости <br />
+        @Html.EditorFor(model => model.NewsText)
+    </p>
+
+    <p>
+        Категория <br />
+        @Html.DropDownListFor(model => model.NewsCategoryId, ViewBag.Categories as SelectList)
+    </p>
+    <tr>
+        <td>Выберите изображение</td>
+        <td><input type="file" name="uploadedFile" accept="image/*" required /></td>
+    </tr>
+    <input id="Submit1" type="submit" value="Отправить" />
+}

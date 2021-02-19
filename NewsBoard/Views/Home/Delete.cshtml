@@ -1,0 +1,11 @@
+﻿@model NewsBoard.Models.News
+@{
+    ViewData["Title"] = "Удаление статьи";
+}
+
+
+<h1>Удалить новость?</h1>
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <input type="submit" value="Удалить" />
+}
