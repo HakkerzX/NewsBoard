@@ -1,0 +1,19 @@
+﻿@model NewsBoard.Models.NewsCategory
+@{
+    ViewData["Title"] = "Создание катогории";
+}
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <fieldset>
+        <legend>Категория</legend>
+
+        <p>
+            Название <br />
+            @Html.EditorFor(model => model.CategoryName)
+        </p>
+        <p>
+            <input type="submit" value="Добавить категорию" />
+        </p>
+    </fieldset>
+}

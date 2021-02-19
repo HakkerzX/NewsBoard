@@ -109,6 +109,19 @@ namespace NewsBoard.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult CreateCategory()
+        {
+            ViewBag.Category = _dataViewService.GetNewsCategories();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateCategory(NewsCategory newsCategory)
+        {
+            _dataViewService.CreateCategory(newsCategory);
+            return RedirectToAction("Index");
+        }
+
 
     }
 }

@@ -34,7 +34,8 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-        @Html.ActionLink("Создать новость", "Create", "Home")
+        <p>@Html.ActionLink("Создать новость", "Create", "Home")</p>
+        <p>@Html.ActionLink("Создать категорию", "CreateCategory", "Home")</p>
     </div>
 
     <footer class="border-top footer text-muted">

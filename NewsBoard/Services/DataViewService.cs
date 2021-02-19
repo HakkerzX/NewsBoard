@@ -111,5 +111,15 @@ namespace NewsBoard.Services
             return categories;
         }
 
+        public void CreateCategory(NewsCategory newsCategory)
+        {
+            var cat = db.NewsCategories.Where(p => p.CategoryName == newsCategory.CategoryName);
+            if (cat == null)
+            {
+                db.NewsCategories.Add(newsCategory);
+                db.SaveChanges();
+            }
+        }
+
     }
 }

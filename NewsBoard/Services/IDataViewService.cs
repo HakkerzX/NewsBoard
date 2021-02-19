@@ -19,6 +19,7 @@ namespace NewsBoard.Services
         void Delete(News news);
         News EditNews(int? id);
         void ConfirmEditNews(News news, IFormFile uploadedFile);
+        void CreateCategory(NewsCategory newsCategory);
 
     }
 }
