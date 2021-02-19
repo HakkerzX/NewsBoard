@@ -5,23 +5,25 @@
 
 @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <p>
-        Название новости <br />
-        @Html.EditorFor(model => model.NewsName, new {requered = "required" })
-    </p>
+    <fieldset>
+        <p>
+            Название новости <br />
+            @Html.EditorFor(model => model.NewsName, new { requered = "required" })
+        </p>
 
-    <p>
-        Текст новости <br />
-        @Html.TextAreaFor(model=>model.NewsText,10,50,null)
-    </p>
+        <p>
+            Текст новости <br />
+            @Html.TextAreaFor(model => model.NewsText, 10, 50, null)
+        </p>
 
-    <p>
-        Категория <br />
-        @Html.DropDownListFor(model => model.NewsCategoryId, ViewBag.Categories as SelectList)
-    </p>
-    <p>
-        Выберите изображение <br />
-        <input type="file" name="uploadedFile" accept="image/*"/>
-    </p>
-    <input id="Submit1" type="submit" value="Отправить" />
+        <p>
+            Категория <br />
+            @Html.DropDownListFor(model => model.NewsCategoryId, ViewBag.Categories as SelectList)
+        </p>
+        <p>
+            Выберите изображение <br />
+            <input type="file" name="uploadedFile" accept="image/*" />
+        </p>
+        <input id="Submit1" type="submit" value="Отправить" />
+    </fieldset>
 }
