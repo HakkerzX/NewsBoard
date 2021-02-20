@@ -113,7 +113,7 @@ namespace NewsBoard.Services
 
         public void CreateCategory(NewsCategory newsCategory)
         {
-            var cat = db.NewsCategories.Where(p => p.CategoryName == newsCategory.CategoryName);
+            var cat = db.NewsCategories.FirstOrDefault(p => p.CategoryName == newsCategory.CategoryName);
             if (cat == null)
             {
                 db.NewsCategories.Add(newsCategory);
