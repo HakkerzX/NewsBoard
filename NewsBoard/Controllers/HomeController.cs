@@ -11,12 +11,10 @@ namespace NewsBoard.Controllers
 {
     public class HomeController : Controller
     {
-        NewsContext db;
         private readonly IDataViewService _dataViewService;
 
-        public HomeController(NewsContext context, IDataViewService dataViewService)
+        public HomeController(IDataViewService dataViewService)
         {
-            db = context;
             _dataViewService = dataViewService;
         }
 
