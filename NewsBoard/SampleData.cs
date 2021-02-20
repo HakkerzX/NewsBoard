@@ -42,11 +42,11 @@ namespace NewsBoard
                     {
                         NewsName = "Мы открылись !",
                         NewsText = "Это первая новость на нашем сайте. УРА!!!",
-                        NewsDate = new DateTime(2021, 2, 20, 18, 30, 25),
+                        NewsDate = DateTime.Now,
                         NewsCategoryId = 1,
                         ImgName = "1.jpg"
                     }
-                    );
+                    ) ;
                 context.SaveChanges();
             }
         }
